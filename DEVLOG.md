@@ -19,3 +19,4 @@
 - Added 2 Test Runners for the new feature files and 1 Runner for executing all tests.
 - Implemented the ability to run tests using specific tags.
 - Wrote the initial `README.md` file.
+- Implemented JSON and DataTable object handling with AI assistance
