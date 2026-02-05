@@ -1,6 +1,8 @@
 package cucumber.steps;
 
+import io.restassured.path.json.JsonPath;
 import cucumber.helpers.JokeApiClient;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -10,6 +12,7 @@ import io.restassured.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
+import java.util.Map;
 
 import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -57,4 +60,17 @@ public class APIJokesSteps {
         response = jokeApiClient.getRandomJoke(jokesNumber);
     }
 
+    @When("user gets a joke under {int} ID")
+    public void userGetsAJokeUnderJokeID(int jokeID) {
+        response = jokeApiClient.getJokeById(jokeID);
+    }
+
+    @And("response should contains exactly those parameters:")
+    public void responseShouldContainsExactlyThoseParameters(DataTable table) {
+        Map<String, String> data = table.asMaps().get(0);
+        JsonPath jsonPath = response.jsonPath();
+        data.keySet().forEach(key->{
+            assertEquals(data.get(key),jsonPath.getString(key), "Value for key/parameter '"+ key +"' is incorrect.");
+        });
+    }
 }

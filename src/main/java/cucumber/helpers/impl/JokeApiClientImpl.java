@@ -17,17 +17,25 @@ public class JokeApiClientImpl implements JokeApiClient {
         RestAssured.baseURI = url;
     }
 
+    @Override
     public Response getByEndpoint(String endpoint){
         return RestAssured.given()
                 .when()
                 .get(endpoint);
     }
 
+    @Override
     public Response getRandomJoke(){
         return getByEndpoint("/random_joke");
     }
 
+    @Override
     public Response getRandomJoke(int jokesNumber){
         return getByEndpoint("/jokes/random/"+jokesNumber);
+    }
+
+    @Override
+    public Response getJokeById(int jokeID) {
+        return getByEndpoint("/jokes/"+jokeID);
     }
 }

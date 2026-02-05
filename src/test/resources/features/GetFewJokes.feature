@@ -1,7 +1,7 @@
 Feature: Random Joke
 
   As a consumer of Official Joke API
-  User want to get specific number of random jokes
+  User wants to get specific number of random jokes
 
   @smoke
   Scenario Outline: Get few jokes

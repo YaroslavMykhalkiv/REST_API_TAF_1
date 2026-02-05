@@ -13,7 +13,7 @@ import org.junit.platform.suite.api.Suite;
         key = Constants.GLUE_PROPERTY_NAME,
         value = "cucumber.steps, cucumber.config"
 )
-@ConfigurationParameter(key = Constants.PLUGIN_PROPERTY_NAME, value = "pretty, html:target/cucumber-GetFewJokes-report.html")
+@ConfigurationParameter(key = Constants.PLUGIN_PROPERTY_NAME, value = "pretty, html:target/testReports/cucumber-GetFewJokes-report.html")
 @ConfigurationParameter(key = Constants.FILTER_TAGS_PROPERTY_NAME, value = "@smoke")
 public class GetFewJokesTest {
 }

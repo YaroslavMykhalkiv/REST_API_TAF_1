@@ -1,6 +1,6 @@
 package cucumber.runner;
-import io.cucumber.junit.platform.engine.Constants;
 
+import io.cucumber.junit.platform.engine.Constants;
 import org.junit.platform.suite.api.ConfigurationParameter;
 import org.junit.platform.suite.api.IncludeEngines;
 import org.junit.platform.suite.api.SelectClasspathResource;
@@ -8,12 +8,12 @@ import org.junit.platform.suite.api.Suite;
 
 @Suite
 @IncludeEngines("cucumber")
-@SelectClasspathResource("features/GetRandomJoke.feature")
+@SelectClasspathResource("features")
 @ConfigurationParameter(
         key = Constants.GLUE_PROPERTY_NAME,
         value = "cucumber.steps, cucumber.config"
 )
-@ConfigurationParameter(key = Constants.PLUGIN_PROPERTY_NAME, value = "pretty, html:target/testReports/cucumber-GetRandomJoke-report.html")
+@ConfigurationParameter(key = Constants.PLUGIN_PROPERTY_NAME, value = "pretty, html:target/testReports/cucumber-AllTests-report.html")
 @ConfigurationParameter(key = Constants.FILTER_TAGS_PROPERTY_NAME, value = "@smoke")
-public class GetRandomJokeTest {
+public class TestRunner {
 }

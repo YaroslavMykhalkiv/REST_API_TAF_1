@@ -11,4 +11,6 @@ public interface JokeApiClient {
     Response getRandomJoke();
 
     Response getRandomJoke(int jokesNumber);
+
+    Response getJokeById(int jokeID);
 }
