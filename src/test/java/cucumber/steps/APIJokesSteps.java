@@ -45,4 +45,16 @@ public class APIJokesSteps {
             response.then().body(field, notNullValue());
         }
     }
+
+    @And("response should contains exactly {int} jokes")
+    public void responseShouldContainsExactlyJokesNumberJokes(int jokesNumber) {
+        List<?> jokes = response.jsonPath().getList("$");
+        assertEquals(jokesNumber, jokes.size(), "API should return exactly "+jokesNumber+" jokes");
+    }
+
+    @When("user gets {int} random jokes")
+    public void userGetsJokesNumberRandomJokes(int jokesNumber) {
+        response = jokeApiClient.getRandomJoke(jokesNumber);
+    }
+
 }
