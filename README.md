@@ -20,6 +20,29 @@ This project is a reusable test automation framework designed to perform end-to-
 > Note: The framework assumes a working REST API environment. No mock servers are included by default.
 
 ---
+## ✅ Assignment Coverage
+
+This project was created as a solution for a **Junior QA Automation Take-home Assignment**.
+
+Below is a mapping between the assignment requirements and their implementation in this repository.
+
+### Implemented Cucumber Scenarios
+
+| Requirement                                                              | Implementation                                                                                                                                                |
+|--------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Scenario A – Get a random joke and verify response structure             | `GetRandomJoke.feature` – uses a plain **Scenario** to validate HTTP status code and required response fields defined in **DataTable**                        |
+| Scenario B – Retrieve multiple random jokes using different input values | `GetFewJokes.feature` – uses **Scenario Outline with Examples** to verify different numbers of jokes and **DataTable** to verify all required response fields |
+| Scenario C – Get specific joke and validate all fields                   | `GetSpecificJoke.feature` – uses **Scenario Outline with Examples** to verify different jokes and **DataTable** to validate expected response fields          |
+
+### Used Cucumber Techniques
+
+The following Cucumber techniques are intentionally used to demonstrate BDD knowledge:
+
+- **Scenario** – for simple, single-case API validation
+- **Scenario Outline + Examples** – for parameterized API testing
+- **DataTable** – to validate expected response fields in a readable way
+- **Tags** – to allow selective test execution
+
 
 ## 🛠️ Build Instructions
 
@@ -84,5 +107,13 @@ Feature: Random Joke
 ## 📊 Reporting
 Cucumber HTML reports are available under **target/testReports** folder
 
-## 📌 AI Usage Disclosure
-Portions of this README were generated with the assistance of AI tools to standardize formatting and content.
+## 🤖 AI Usage Declaration
+
+AI tools were used in a limited and supportive manner during development.
+
+- AI was used mainly to clarify specific technical questions (e.g. Cucumber + JUnit 5 configuration, Spring integration concepts).
+- AI also helped me write readable and easy-to-understand README and DEVLOG files.
+- All code structure, test scenarios, and final implementations were reviewed, adapted, and written manually.
+- The overall design decisions and test logic reflect my own understanding and learning process.
+
+No code was blindly copied without understanding or verification.
