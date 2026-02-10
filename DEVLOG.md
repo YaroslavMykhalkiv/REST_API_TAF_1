@@ -53,6 +53,11 @@ This document describes the development process and key technical decisions made
 
 ---
 
+## Step 6 – Upgrade
+
+- Improved README and DEVLOG files, by adding some new topics
+- Added new layer Functions for better readability and scalability
+
 ## Summary & Next Steps
 
 This project focuses on clarity, correctness, and demonstrating core QA Automation skills.
